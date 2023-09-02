@@ -4,11 +4,12 @@ import Gestionar from '../components/Gestionar';
 import Configuracion from '../components/Configuracion';
 import { useAuth } from '../context/AuthContext'
 import { FiLogOut,FiSettings } from "react-icons/fi";
-import { FaChartBar,FaCalendarAlt,FaBell} from "react-icons/fa";
+import { FaChartBar,FaCalendarAlt} from "react-icons/fa";
 import { FaHouseChimney} from "react-icons/fa6";
 import menuIcon from '../img/menu.png'
+import foto from '../img/user_icon.jpg'
 import Recordatorios from '../components/Recordatorios';
-import Fechas from '../components/Fechas';
+
 const Index = () => {
   const [isOpen, setIsOpen] = useState(true)
   const [indexMenu, setIndexMenu] = useState(0)
@@ -36,7 +37,7 @@ const Index = () => {
             onClick={()=>setIsOpen(!isOpen)}
           />
           <div className='flex gap-x-4 items-center'>
-            <img src='./src/img/user_icon.jpg' alt=""
+            <img src={foto} alt=""
               className={`cursor-pointer w-10 h-10 rounded-full duration-500`}
             />
             <h1 className={`text-white duration-300 font-medium text-xl origin-left ${!isOpen && "scale-0"}`}>{user.username}</h1>

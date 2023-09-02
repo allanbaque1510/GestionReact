@@ -4,6 +4,11 @@ import FormRecordatorio from './FormRecordatorio';
 import { usePassContext } from '../context/PasswordContext';
 import { FaRegEdit,FaRegTrashAlt} from "react-icons/fa";
 import Swal from 'sweetalert2';
+import gatito1 from '../img/gatitos/gatito1.jpg'
+import gatito2 from '../img/gatitos/gatito2.jpg'
+import gatito3 from '../img/gatitos/gatito3.jpg'
+import gatito4 from '../img/gatitos/gatito4.jpg'
+import gatito5 from '../img/gatitos/gatito5.jpg'
 const Recordatorios = () => {
   const [openForm, setOpenForm] = useState(false)
   const [idEditRecord, setIdEditRecord] = useState('')
@@ -15,7 +20,13 @@ const Recordatorios = () => {
     fecha: '',
   });
   const {viewAllRecord,objRecords,objRecord,deleteRecordatorio,borrarRecord,updateRecord}= usePassContext();   
-  
+  const imagenesGatos = [
+    {titulo:"gatito1" ,imagen:gatito1},
+    {titulo:"gatito2" ,imagen:gatito2},
+    {titulo:"gatito3" ,imagen:gatito3},
+    {titulo:"gatito4" ,imagen:gatito4},
+    {titulo:"gatito5" ,imagen:gatito5},
+  ]
   const cerrarForm=(valor)=>{
     setOpenForm(valor)
   }
@@ -120,7 +131,7 @@ const Recordatorios = () => {
         <section className="duration-300 w-11/12 ">
         {objRecords.map((record,index)=>(
           <article  style={(record.fondo?{
-            backgroundImage:`url(./src/img/gatitos/${record.fondo})`,
+            backgroundImage:`url(${imagenesGatos.find((gato) => gato.titulo === record.fondo).imagen})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'right bottom',
             backgroundSize:'contain',
