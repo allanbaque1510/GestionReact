@@ -88,7 +88,7 @@ const Inicio = () => {
                 {(valSearch.length>0?filteredData:objPasswords).map((pass,index)=>(
                   <li className=' scrollBar bg-white mx-2 my-4 rounded-xl max-w-lg flex flex-col ' key={index}>
                       <div className="bg-pink-700 flex flex-col items-center rounded-t-xl">
-                        <img className=' bg-white p-1 rounded-full w-16 h-16 -mt-4 border-4 border-pink-700' src={pass.imagen} alt="" />
+                        <img className=' bg-white p-1 rounded-full w-16 h-16 -mt-4 border-4 border-pink-700' src="https://cdn-icons-png.flaticon.com/512/1864/1864514.png" alt="" />
                         <span className='text-white font-bold'>
                           {pass.nameApp}
 
