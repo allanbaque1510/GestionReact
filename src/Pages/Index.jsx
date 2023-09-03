@@ -19,7 +19,6 @@ const Index = () => {
     {title: "Inicio", icon:FaHouseChimney, component:Inicio},
     {title: "Gestionar",icon:FaChartBar, component:Gestionar},
     {title: "Recordatorios",icon:FaCalendarAlt, component:Recordatorios},
-    {title: "Configuracion",icon:FiSettings, component:Configuracion},
     {title: "Salir",icon:FiLogOut, action:logOut },
   ]
   return (
