@@ -20,6 +20,9 @@ export const AuthProvider = ({children}) => {
     const singup = async(user) =>{
         try {
             const res = await registerRequest(user);
+            const cookie=Cookies.get();
+            console.log(cookie)
+            cookie.set('token', cookie.token); 
             setUser(res.data)
             setIsAuthenticated(true);
             
@@ -32,10 +35,11 @@ export const AuthProvider = ({children}) => {
     const signin = async(user) =>{
         try {
             const res = await loginRequest(user);
+            const cookie=Cookies.get();
+            console.log(cookie)
+            cookie.set('token', cookie.token); 
             setUser(res.data)
             setIsAuthenticated(true);
-            
-
         } catch (error) {
             console.log(error)
             if(error.response.data){
